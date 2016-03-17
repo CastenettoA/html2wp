@@ -17,8 +17,13 @@
     }
 
     $n = 0;
-    foreach($file_array as $linea){
+
+
+
+   foreach($file_array as $linea){
         echo $linea .'<br>';
+       $output = preg_match("/<\/head>/", $linea);
+       print_r($output) .'<br>';
     }
 
 ?>
