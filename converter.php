@@ -27,4 +27,5 @@
     }
 
 //preg_replace, strpos??? http://php.net/manual/en/function.strpos.php
+//what is binary safe?
 ?>
