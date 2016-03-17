@@ -22,7 +22,7 @@
 
    foreach($file_array as $linea){
         echo $linea .'<br>';
-       $output = preg_match("/<\/head>/", $linea);
+       $output = preg_match("/<\/head>/", $linea);  //strpos??? http://php.net/manual/en/function.strpos.php
        print_r($output) .'<br>';
     }
 
