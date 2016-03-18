@@ -7,18 +7,17 @@
 
     $file_array = array();
     $n = 0;
-    $filename = 'text.html';
+    $break1 = "</head>";
+    $break2 = "<footer>";
+    $filename = "text.html";
 
-    $filestring = file_get_contents($filename);
-    $filearray = explode("\n", $filestring);
+    $filestring = file_get_contents($filename); // get the file
 
+    $filestring = htmlspecialchars($filestring);
 
-    while(list($var, $val) = each($filearray)){
-        ++$var;
-        $val = htmlspecialchars(trim($val));
-        print "Line $var: $val<br>";
-    }
+    print_r($filestring);
 
+    //now I have to check with strpos the position of the brack point and divede the file in 3 file.
 
 //preg_replace, strpos??? http://php.net/manual/en/function.strpos.php
 //what is binary safe?
