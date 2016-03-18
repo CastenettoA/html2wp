@@ -7,25 +7,20 @@
 
     $file_array = array();
     $n = 0;
+    $filename = 'text.html';
 
-    $the_file = file('text.html');
+    $filestring = file_get_contents($filename);
+    $filearray = explode("\n", $filestring);
 
-    //assign each line to the array $file_array
-    foreach($the_file as $line_num => $line) {
-       $file_array[$n] = htmlspecialchars($line);
-       $n++;
+
+    while(list($var, $val) = each($filearray)){
+        ++$var;
+        $val = htmlspecialchars(trim($val));
+        print "Line $var: $val<br>";
     }
 
-    $n = 0;
-
-
-
-   foreach($file_array as $linea){
-        echo $linea .'<br>';
-       $output = preg_match("/<\/head>/", $linea);
-       print_r($output) .'<br>';
-    }
 
 //preg_replace, strpos??? http://php.net/manual/en/function.strpos.php
 //what is binary safe?
+
 ?>
