@@ -13,11 +13,13 @@
 
     $filestring = file_get_contents($filename); // get the file
 
-    $filestring = htmlspecialchars($filestring);
 
-    print_r($filestring);
+    $pos = strpos($filestring, "</head>");
 
-    //now I have to check with strpos the position of the brack point and divede the file in 3 file.
+    echo $pos;
+
+
+    //now I have to check with strpos the position of the brack point and divede the file in 3 array (header, body, footer).
 
 //preg_replace, strpos??? http://php.net/manual/en/function.strpos.php
 //what is binary safe?
