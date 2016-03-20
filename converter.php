@@ -7,16 +7,22 @@
 
     $file_array = array();
     $n = 0;
-    $break1 = "</head>";
-    $break2 = "<footer>";
+    $break = array("</head>", "<footer>");
     $filename = "text.html";
 
     $filestring = file_get_contents($filename); // get the file
 
 
-    $pos = strpos($filestring, "</head>");
+    $header = explode($break[0], $filestring);
 
-    echo $pos;
+    $header = array_map("htmlspecialchars", $header);
+    print_r($header);
+
+    /*
+     * position of a string
+     $pos = strpos($filestring, $break[0]);
+    */
+
 
 
     //now I have to check with strpos the position of the brack point and divede the file in 3 array (header, body, footer).
