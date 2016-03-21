@@ -10,19 +10,10 @@
 
     $filestring = file_get_contents($filename); // get the file
 
-    $content = explode($break[0], $filestring); //return array of split string: the header and the body
-
-    $header[] = $content[0];
-    $header[] = "</head>";
-
-    $footer = explode($break[1], $content[1]); //return the body and the footer
-
-    //dato che ogni elemento html (quindi anche l'head) più avere una classe
-    //devo usare la classe PHP DOMDocument per trovare gli elementi e assegnarli le eventuali classi
-
-
-
-    var_dump($footer);
+    $doc = new DOMDocument();
+    $doc->loadHTML($filestring);
+    $sxml = simplexml_import_dom($doc);  //Get a SimpleXMLElement object from a DOM node.
+    var_dump($doc);
 
 
 
