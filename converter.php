@@ -5,29 +5,31 @@
  * the program is't ready to use, please wait some days
  */
 
-    $file_array = array();
-    $n = 0;
     $break = array("</head>", "<footer>");
     $filename = "text.html";
 
     $filestring = file_get_contents($filename); // get the file
 
+    $content = explode($break[0], $filestring); //return array of split string: the header and the body
 
-    $header = explode($break[0], $filestring);
+    $header[] = $content[0];
+    $header[] = "</head>";
 
-    $header = array_map("htmlspecialchars", $header);
-    print_r($header);
+    $footer = explode($break[1], $content[1]); //return the body and the footer
 
-    /*
-     * position of a string
-     $pos = strpos($filestring, $break[0]);
-    */
-
+    //dato che ogni elemento html (quindi anche l'head) più avere una classe
+    //devo usare la classe PHP DOMDocument per trovare gli elementi e assegnarli le eventuali classi
 
 
-    //now I have to check with strpos the position of the brack point and divede the file in 3 array (header, body, footer).
 
-//preg_replace, strpos??? http://php.net/manual/en/function.strpos.php
-//what is binary safe?
+    var_dump($footer);
+
+
+
+/* position of a string
+ $pos = strpos($filestring, $break[0]);
+*/
+// what is binary safe?
+// array_splice — Remove a portion of the array and replace it with something else
 
 ?>
