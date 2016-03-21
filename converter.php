@@ -31,5 +31,6 @@
 */
 // what is binary safe?
 // array_splice — Remove a portion of the array and replace it with something else
-
+// http://www.the-art-of-web.com/php/html-xpath-query/
+//http://php.net/manual/en/class.domdocument.php
 ?>
